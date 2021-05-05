@@ -1214,7 +1214,7 @@ protected:
             }
         }
 
-        _WriteTransformation(pnode, geometry_origin);
+        // _WriteTransformation(pnode, geometry_origin);
 
         // process all children
         FOREACHC(itjoint, plink->child_joints) {
