@@ -1255,9 +1255,10 @@ protected:
                 domTranslateRef ptrans = daeSafeCast<domTranslate>(childinfo.pnode->add(COLLADA_ELEMENT_TRANSLATE,0));
                 ptrans->setSid(jointnodesid.c_str());
                 ptrans->getValue().setCount(3);
-                ptrans->getValue()[0] = 0;
-                ptrans->getValue()[1] = 0;
-                ptrans->getValue()[2] = 0;
+                // bug
+                ptrans->getValue()[0] = pjoint->parent_to_joint_origin_transform.position.x + pjoint->axis.x * 0;
+                ptrans->getValue()[1] = pjoint->parent_to_joint_origin_transform.position.y + pjoint->axis.y * 0;
+                ptrans->getValue()[2] = pjoint->parent_to_joint_origin_transform.position.z + pjoint->axis.z * 0;
                 break;
             }
             default:
